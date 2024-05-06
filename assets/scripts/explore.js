@@ -53,14 +53,17 @@ function init() {
       }
     }
 
-    // open mouth
-    image_face.src = 'assets/images/smiling_open.png';
-
     // speaking
     speechSynthesis.speak(utterThis);
 
+    // open mouth
+    utterThis.onstart = function(event) {
+      image_face.src = 'assets/images/smiling-open.png';
+    };
     // close mouth
-    image_face.src = 'assets/images/smiling.png';
+    utterThis.onend = function(event) {
+      image_face.src = 'assets/images/smiling.png';
+    };
   });
   
   
