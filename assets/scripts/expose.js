@@ -3,15 +3,15 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  // TODO
-
   // event for selecting the horn
   const select_horn = document.getElementById('horn-select');
+  var selected_horn = select_horn.value;
+
   select_horn.addEventListener('change', function() {
     const image_horn = document.querySelector('img');  // get image element from html
     const sound_horn = document.querySelector('audio');  // get audio element from html
 
-    const selected_horn = select_horn.value;  // get the selected horns value
+    selected_horn = select_horn.value;  // get the selected horns value
   
     // sets image and sound based on the selected horn
     if (selected_horn == 'air-horn') {
@@ -25,10 +25,6 @@ function init() {
     else if (selected_horn == 'party-horn') {
       image_horn.src = 'assets/images/party-horn.svg';
       sound_horn.src = 'assets/audio/party-horn.mp3';
-
-      // shoots confetti
-      const jsConfetti = new JSConfetti();
-      jsConfetti.addConfetti();
     }
   });
 
@@ -59,9 +55,17 @@ function init() {
 
   // event for play sound button
   const play_sound = document.querySelector('button');
+
   play_sound.addEventListener('click', function() {
     const sound_horn = document.querySelector('audio');
     sound_horn.play();
+
+    //checks if it's the party horn
+    if (selected_horn == 'party-horn'){
+      // shoots confetti if party horn is played
+      const jsConfetti = new JSConfetti();
+      jsConfetti.addConfetti();
+    }
   });
 }
 
