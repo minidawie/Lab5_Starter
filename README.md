@@ -3,4 +3,6 @@ David Koh
 
 Advaith Ravishankar
 
-https://minidawie.github.io/Lab5_Starter/
+[Expose](https://minidawie.github.io/Lab5_Starter/expose.html)
+
+[Explore](https://minidawie.github.io/Lab5_Starter/explore.html)
