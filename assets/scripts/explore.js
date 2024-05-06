@@ -1,9 +1,6 @@
 // explore.js
 window.addEventListener('DOMContentLoaded', init);
 
-
-
-
 function init() {
   // adding voice list
   function populateVoiceList() {
