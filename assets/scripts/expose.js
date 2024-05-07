@@ -60,12 +60,14 @@ function init() {
     const sound_horn = document.querySelector('audio');
     sound_horn.play();
 
-    //checks if it's the party horn
-    if (selected_horn == 'party-horn'){
-      // shoots confetti if party horn is played
-      const jsConfetti = new JSConfetti();
-      jsConfetti.addConfetti();
-    }
+    sound_horn.onplay = function(event) {
+      //checks if it's the party horn
+      if (selected_horn == 'party-horn'){
+        // shoots confetti if party horn is played
+        const jsConfetti = new JSConfetti();
+        jsConfetti.addConfetti();
+      }
+    };
   });
 }
 
