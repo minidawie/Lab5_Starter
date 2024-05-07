@@ -23,7 +23,7 @@ test('Test 3: isPhoneNumber should return false', () => {
 });
 
 test('Test 4: isPhoneNumber should return false', () => {
-  expect(isPhoneNumber('ac490')).toBeFalsy();
+  expect(isPhoneNumber('ac40')).toBeFalsy();
 });
 
 //  Testing isEmail() function
